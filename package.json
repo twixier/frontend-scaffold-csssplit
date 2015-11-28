@@ -1,0 +1,21 @@
+{
+  "name": "frontend-scaffold-csssplit",
+  "version": "1.0.0",
+  "description": "Check your stylesheet and evaluate if it needs splitup to support ie8/ie9",
+  "main": "index.js",
+  "keywords": [
+    "error",
+    "log",
+    "frontend-scaffold"
+  ],
+  "author": "Martin Hansen <twixier>",
+  "license": "ISC",
+  "devDependencies": {
+    "frontend-scaffold-log": "git://github.com/twixier/frontend-scaffold-log.git#e6f286f297b8b4484e91bda00e0e5a438ed21dea",
+    "gulp-util": "^3.0.7",
+    "parker": "0.0.9",
+    "sakugawa": "^0.5.0",
+    "string_decoder": "^0.10.31",
+    "through2": "^2.0.0"
+  }
+}
