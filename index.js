@@ -69,7 +69,7 @@ splitter.test = function (filename) {
       results = test.run(filecontent.toString());
    
     // Check if total selectors count is higher than 4095
-    if(results['total-selectors'] <= 4095) {
+    if(results['total-selectors'] >= 4095) {
       // Log an entry so developer is aware we need a cssplit
       log({
         "title": "CSS-Split",
