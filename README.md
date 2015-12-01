@@ -14,7 +14,7 @@ npm install twixier/frontend-scaffold-csssplit --save-dev
 
 NPM will now install the plugin and its dependencies.
 
-**Configuration**
+##Configuration##
 As per 1.0.3 version we have two settings you can parse to the plugin
 
 **match** {string}
