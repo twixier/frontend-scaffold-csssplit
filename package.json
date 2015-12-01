@@ -1,6 +1,6 @@
 {
   "name": "frontend-scaffold-csssplit",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Check your stylesheet and evaluate if it needs splitup to support ie8/ie9",
   "main": "index.js",
   "keywords": [
