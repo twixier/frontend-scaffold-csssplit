@@ -29,11 +29,29 @@ var splitter = function splitter (opts) {
       path: (opts.path ? opts.path : "ie-partials")
     };
 
-    // Test: Are there more than 4095 selectors in our stylesheet?
-    if(splitter.test(file.path)) {
-      splitter.splitFiles(file.path, opts);
-    };
-    
+    // Check if file.path matches options.match search regex
+    if (options.match.length > 0) {
+      // Since we have a pattern to search for, try matching it to our file.path
+      if(file.path.indexOf(options.match) > -1) {
+        // Test: Are there more than 4095 selectors in our stylesheet?
+        if(splitter.test(file.path)) {
+          splitter.splitFiles(file.path, opts);
+        }
+      } else {
+        // We couldn't match our pattern against file.path
+        log({
+        "title": "CSS-Split",
+        "status": "Notification",
+        "message": "Your filepattern didn't match any files in stream. CSS-Split is aborting..."
+        });
+      }
+    } else {
+      // We didnt have a pattern to search for, run test on all files comming down stream      
+      if(splitter.test(file.path)) {
+        splitter.splitFiles(file.path, opts);
+      }
+    }
+ 
     return cb();
   });
 }
@@ -129,7 +147,7 @@ splitter.writeImports = function (filenames) {
   // Apply log message to console
   log({
       "title": "CSS-Split",
-      "status": "OK",
+      "status": "Complete",
       "message": "Your CSS is now splitted and we have made an ie.css file which contains all import directives."
     });
 }
