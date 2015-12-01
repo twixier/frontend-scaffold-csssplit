@@ -14,15 +14,18 @@ npm install twixier/frontend-scaffold-csssplit --save-dev
 
 NPM will now install the plugin and its dependencies.
 
-** Configuration **
+**Configuration**
 As per 1.0.3 version we have two settings you can parse to the plugin
-- match {string}
+
+**match** {string}
+
 If you have multiple files comming down your stream CSSSplit will go through each one and test if it should be splitted. If you provide a string with a partial filename we will try to match it to one of thoose files in the stream and only test that one.
 
-- path {string} 
+**path** {string} 
+
 When we're splitting a stylesheet into pieces we have to store our @import files somewhere. We're always working under the assumption that it should be stored as closest to your "normal" stylesheet - therefore if you don't set path, we fallback to "ie-partials".
 
-** A simple example ** 
+**A simple example** 
 ```
 gulp.task('compile:css', function () {
   return gulp.src(['./stylesheet/main.scss', './stylesheet/mobile.scss'])
